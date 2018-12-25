@@ -1,16 +1,16 @@
-# app1
+Flutter - ийн эхний бичлэгээ оруулж байна 🙂.
+Энэхүү бичлэгээр [@TheGanbayar](http://fb.com/TheGanbayar) илгээсэн [загвар](http://ebulan.com/assets/images/flutter-app1.png)ыг Flutter ашиглан хийж байгаа.
 
-A new Flutter project.
+Flutter - тэй холбоотой өөрсдийн санаа бодол, асуултуудаа илгээгээрэй 👍️ 
 
-## Getting Started
+1. ```ListView, Card, Column, Row, Padding``` эдгээр ```Widget```-үүдийг ашигласан.    
+https://www.youtube.com/watch?v=1RJtFheIsjU
 
-This project is a starting point for a Flutter application.
+2. ```BottomNavigationBar``` ```widget``` ашигласан.   
+https://www.youtube.com/watch?v=00erpzs3H0c
 
-A few resources to get you started if this is your first Flutter project:
+3. ```Coming soon...```
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+___
+1. [Ebulan](http://ebulan.com)
+2. [Youtube](https://www.youtube.com/watch?v=1RJtFheIsjU)
