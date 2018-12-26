@@ -17,7 +17,7 @@ class ListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new ClipRRect(
-            child: new Image.network(data['urlToImage']),
+            child: new Image.network(data['urlToImage'] ?? 'https://via.placeholder.com/400x200'),
             borderRadius: BorderRadius.only(
               topLeft: new Radius.circular(16.0),
               topRight: new Radius.circular(16.0),
