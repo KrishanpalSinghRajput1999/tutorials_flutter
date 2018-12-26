@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ListItem extends StatelessWidget {
+  ListItem({Key key, this.data}) : super(key: key);
+
+  final Map data;
+
   @override
   Widget build(BuildContext context) {
     return new Card(
@@ -13,8 +17,7 @@ class ListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new ClipRRect(
-            child: new Image.network(
-                'https://images.unsplash.com/photo-1545647274-96644da34363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'),
+            child: new Image.network(data['urlToImage']),
             borderRadius: BorderRadius.only(
               topLeft: new Radius.circular(16.0),
               topRight: new Radius.circular(16.0),
@@ -26,17 +29,13 @@ class ListItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                new Text(
-                  'This is title text'.toUpperCase(),
-                  style: Theme.of(context).textTheme.title,
-                ),
+                new Text(data['title'], style: Theme.of(context).textTheme.title),
                 new SizedBox(height: 16.0),
                 new Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    new Text('19 March 2018'),
-                    new Text('10 min'),
-                    new Text('125k views'),
+                    new Text(data['publishedAt'].toString().substring(0, 10)),
+                    new Text(data['source']['name']),
                   ],
                 ),
               ],
