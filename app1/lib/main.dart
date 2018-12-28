@@ -38,11 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
     {"icon": FontAwesomeIcons.hackerNews, "index": 3},
   ];
 
+  String _apiKey = '331e91aa149a4182851563e9f4d2c892';
+
   int _currentTab = 0;
-  String _apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=04236e3e609b4d228d0c072d3e1b997b';
+  String _apiUrl = '';
   int _total = 0;
   List _articles = [];
-
   bool _loading = true;
 
   @override
@@ -59,11 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
     //tab4 = techcrunch
 
     switch (index) {
-      case 0: _apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=04236e3e609b4d228d0c072d3e1b997b'; break;
-      case 1: _apiUrl = 'https://newsapi.org/v2/everything?q=bitcoin&from=2018-11-26&sortBy=publishedAt&apiKey=04236e3e609b4d228d0c072d3e1b997b'; break;
-      case 2: _apiUrl = 'https://newsapi.org/v2/everything?q=apple&from=2018-12-25&to=2018-12-25&sortBy=popularity&apiKey=04236e3e609b4d228d0c072d3e1b997b'; break;
-      case 3: _apiUrl = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=04236e3e609b4d228d0c072d3e1b997b'; break;
+      case 0: _apiUrl = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' + _apiKey; break;
+      case 1: _apiUrl = 'https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=' + _apiKey; break;
+      case 2: _apiUrl = 'https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=' + _apiKey; break;
+      case 3: _apiUrl = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=' + _apiKey; break;
     }
+
+    print(_apiUrl);
 
     setState(() {
       _loading = true;
@@ -125,11 +128,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _buildBody(BuildContext context) {
     if (_loading) {
-      return new SpinKitRotatingCircle(
-        color: Colors.blue,
+      return new SpinKitCircle(
+        color: Colors.black,
         size: 50.0,
       );
     }
+
+    print(_articles);
 
     return new ListView.builder(
       itemBuilder: (context, index) {
